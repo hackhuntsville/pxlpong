@@ -1,6 +1,7 @@
 from sys import stdout
 from colorama import Fore, Back
 
+
 class StringSimulator(object):
     def __init__(self, length, pin=0):
         self.length = length
@@ -42,6 +43,7 @@ class StringSimulator(object):
             term_color = Fore.RESET
 
         return term_color
+
 if __name__ == "__main__":
     from time import sleep
     sim = StringSimulator(16)
