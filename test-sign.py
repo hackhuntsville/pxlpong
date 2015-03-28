@@ -1,0 +1,4 @@
+import TerminalSign
+
+sign = TerminalSign()
+
