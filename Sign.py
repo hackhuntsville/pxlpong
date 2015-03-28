@@ -1,8 +1,12 @@
-class Sign:
+class Sign(object):
 
-	data = "pxlpong"
-	dirty = False
+	def __init__(self):
+		self.data = "pxlpong init..."
+		self.dirty = False
 
-	def update(self, text):
-		data = text
-		dirty = True
+		print "Sign init"
+
+	def set(self, text):
+		self.data = text
+		self.dirty = True
+

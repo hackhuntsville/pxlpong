@@ -1,5 +1,12 @@
-import Sign
+from Sign import Sign
 
 class TerminalSign(Sign):
-	def placeholder_fn_doesnt_do_anything(self):
-		print "no"
+	def __init__(self):
+		super(TerminalSign, self).__init__()
+		print "TerminalSign init"
+
+	def update(self):
+		print self.data
+		self.dirty = False
+
+
