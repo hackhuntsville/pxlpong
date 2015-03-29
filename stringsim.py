@@ -1,4 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from sys import stdout
+import os
 from colorama import Fore, Back
 
 
@@ -7,6 +11,11 @@ class StringSimulator(object):
         self.length = length
         self.pin = pin
         self.pixel_array = [(0, 0, 0) for x in range(length)]
+        os.system('setterm -cursor off')
+
+    def __del__(self):
+        os.system('setterm -cursor on')
+        print ""
 
     def set_pixel_color(self, index, red, green, blue):
         self.pixel_array[index] = (red, green, blue)
@@ -15,7 +24,7 @@ class StringSimulator(object):
         output_string = ""
         for i in range(self.length):
             term_color = self._get_term_color(self.pixel_array[i])
-            output_string += term_color + "."
+            output_string += term_color + "█"
         stdout.write("\r" + output_string)
         stdout.flush()
 
