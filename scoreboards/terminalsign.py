@@ -1,4 +1,4 @@
-from Sign import Sign
+from betabrite import Sign
 
 class TerminalSign(Sign):
 	def __init__(self):
@@ -9,4 +9,10 @@ class TerminalSign(Sign):
 		print self.data
 		self.dirty = False
 
+if __name__ == "__main__":
+
+	sign = TerminalSign()
+	sign.update()
+	sign.set("Test String")
+	sign.update()
 
