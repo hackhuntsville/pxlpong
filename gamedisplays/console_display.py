@@ -20,6 +20,10 @@ class StringSimulator(object):
     def set_pixel_color(self, index, red, green, blue):
         self.pixel_array[index] = (red, green, blue)
 
+    def clear_display(self):
+        for x in range(self.length):
+            self.pixel_array[x] = (0, 0, 0)
+
     def update_display(self):
         output_string = ""
         for i in range(self.length):
