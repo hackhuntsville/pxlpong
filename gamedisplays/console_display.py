@@ -4,17 +4,19 @@
 from sys import stdout
 import os
 from colorama import Fore, Back
-
+import platform
 
 class StringSimulator(object):
     def __init__(self, length, pin=0):
         self.length = length
         self.pin = pin
         self.pixel_array = [(0, 0, 0) for x in range(length)]
-        os.system('setterm -cursor off')
+        if platform.system() == 'Linux':
+            os.system('setterm -cursor off')
 
     def __del__(self):
-        os.system('setterm -cursor on')
+        if platform.system() == 'Linux':
+            os.system('setterm -cursor on')
         print ""
 
     def set_pixel_color(self, index, red, green, blue):
