@@ -61,10 +61,15 @@ class StringSimulator(object):
 
 if __name__ == "__main__":
     from time import sleep
-    sim = StringSimulator(16)
-    sim.set_pixel_color(3, 255, 0, 0)
-    sim.update_display()
-    sleep(1)
-    sim.set_pixel_color(4, 255, 0, 0)
-    sim.update_display()
+
+    def test_display():
+        sim = StringSimulator(16)
+        sim.clear_display()
+        sim.update_display()
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 255, 255, 255)
+            sim.update_display()
+            sleep(0.1)
+
+    test_display()
 
