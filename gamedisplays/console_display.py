@@ -30,7 +30,11 @@ class StringSimulator(object):
         output_string = ""
         for i in range(self.length):
             term_color = self._get_term_color(self.pixel_array[i])
-            output_string += term_color + "█"
+            if term_color == Fore.RESET:
+                character = "."
+            else:
+                character = "█"
+            output_string += term_color + character
         stdout.write("\r" + output_string)
         stdout.flush()
 
