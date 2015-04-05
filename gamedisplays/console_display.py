@@ -74,6 +74,34 @@ if __name__ == "__main__":
             sim.set_pixel_color(i, 255, 255, 255)
             sim.update_display()
             sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 0, 255, 255)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 255, 0, 255)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 255, 255, 0)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 0, 0, 255)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 255, 0, 0)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 0, 255, 0)
+            sim.update_display()
+            sleep(0.1)
+        for i in range(0, 16):
+            sim.set_pixel_color(i, 0, 0, 0)
+            sim.update_display()
+            sleep(0.1)
 
     test_display()
 
